@@ -63,6 +63,7 @@ const Register = () => {
             >
             </Nav>
             <Nav>
+              <Link to={'/bloodbank'}>Bloodbank</Link>
               <Link to={'/'}>Home</Link>
               <Link to={'/login'}>Login</Link>
               <Link to={'/register'}>Register</Link>

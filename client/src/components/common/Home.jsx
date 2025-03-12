@@ -23,6 +23,7 @@ const Home = () => {
             >
             </Nav>
             <Nav>
+              <Link to={'/bloodBank'}>BloodBank</Link>
               <Link to={'/'}>Home</Link>
               <Link to={'/login'}>Login</Link>
               <Link to={'/register'}>Register</Link>
