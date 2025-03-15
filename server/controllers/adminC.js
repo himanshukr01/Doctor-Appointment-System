@@ -117,10 +117,10 @@ const displayAllAppointmentController = async (req, res) => {
    }
 };
 
-module.exports = {
-   getAllDoctorsControllers,
-   getAllUsersControllers,
-   getStatusApproveController,
-   getStatusRejectController,
-   displayAllAppointmentController,
-};
+// module.exports = {
+//    getAllDoctorsControllers,
+//    getAllUsersControllers,
+//    getStatusApproveController,
+//    getStatusRejectController,
+//    displayAllAppointmentController,
+// };
