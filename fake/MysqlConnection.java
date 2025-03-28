@@ -22,9 +22,9 @@ public class MySQLConnection {
             ResultSet rs = stmt.executeQuery(query);
 
             // Process the result set
-            while (rs.next()) {
-                System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
-            }
+            // while (rs.next()) {
+            //     System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
+            // }
 
         } catch (SQLException e) {
             e.printStackTrace();
