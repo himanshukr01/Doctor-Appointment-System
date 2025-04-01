@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Bloodbank from "./components/common/Bloodbank";
 import Home from "./components/common/Home";
 import Login from "./components/common/Login";
 import Register from "./components/common/Register";
@@ -17,6 +18,8 @@ function App() {
             <Route exact path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register/>} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/Bloodbank" element={<Bloodbank/>} />  
             {userLoggedIn ? (
               <>
                 <Route path="/adminhome" element={<AdminHome />} />
