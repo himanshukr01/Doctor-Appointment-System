@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectToDB = () => {
   mongoose
-    .connect('mongodb+srv://himanshukr1505892:<db_password>@cluster0.imnoc.mongodb.net/notepad', {
+    .connect('mongodb+srv://himanshukr1505892:6cnCTRXkuMAKHlTu@cluster0.imnoc.mongodb.net/', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
