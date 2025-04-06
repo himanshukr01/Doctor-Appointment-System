@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'], // Custom keyword for Inter
-        viga: ['Viga', 'sans-serif'],   // Custom keyword for Viga
+        inter: ['Inter', 'sans-serif'], 
+        viga: ['Viga', 'sans-serif'],   
       },
     },
   },
