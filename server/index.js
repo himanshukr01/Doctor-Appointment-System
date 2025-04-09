@@ -3,46 +3,54 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
-const colors = require("colors"); // for console styling
-const connectDB = require("./Config/Db"); // assuming this is the main DB config
+const colors = require("colors");
 
-// Initialize express app
-const app = express();
-
-// Configure environment variables
+// Environment Config
 dotenv.config();
 
-// Connect to the database
+// DB Connection
+const connectDB = require("./Config/Db");
 connectDB();
 
-// Middleware setup
+// Initialize Express App
+const app = express();
+
+// Middleware Setup
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
-// Set the view engine if needed
+// View Engine Setup
 app.set('view engine', 'ejs');
 
-// Global error handler middleware
+// Routes Import
+const Donor = require("./Routes/Donor");
+const Donne = require("./Routes/Donne");
+const BloodManager = require("./Routes/BloodManager");
+const UserRoutes = require("./routes/userRoutes");
+const AdminRoutes = require("./routes/adminRoutes");
+const DoctorRoutes = require("./routes/doctorRoutes");
+
+// Routes Setup
+app.use("/api/donor", Donor);
+app.use("/api/donee", Donne);
+app.use("/api/bloodmanager", BloodManager);
+app.use("/api/user", UserRoutes);
+app.use("/api/admin", AdminRoutes);
+app.use("/api/doctor", DoctorRoutes);
+
+// Global Error Handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: "Something went wrong", success: false });
 });
 
-// Main Routes
-app.use("/api/donor", require("./Routes/Donor"));
-app.use("/api/donee", require("./Routes/Donne"));
-app.use("/api/bloodmanager", require("./Routes/BloodManager"));
-app.use("/api/user", require("./routes/userRoutes"));
-app.use("/api/admin", require("./routes/adminRoutes"));
-app.use("/api/doctor", require("./routes/doctorRoutes"));
-
 // Server Port
 const PORT = process.env.PORT || 8001;
 
-// Start server
+// Start Server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`.bgCyan.white);
+  console.log(`Server is successfully running at port no : ${PORT}`.bgCyan.white);
 });
